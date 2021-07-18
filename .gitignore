@@ -1,0 +1,8 @@
+# MS-DOS
+*.exe
+
+# Linux
+*.out
+
+# MacOS
+.DS_Store
