@@ -1,3 +1,6 @@
+# Title: Max Sum Counting
+# Point: Dynamic Programming(DP法:動的計画法)
+
 def sep_input():
     n = int(input())
     a_i = input().rstrip().split(' ')
@@ -8,3 +11,11 @@ def sep_input():
 
 DIV = 998244353
 N, a_i, b_i = sep_input()
+print("N:", N)
+print("a_i:", a_i)
+print("b_i:", b_i)
+
+a_i.sort()
+b_i.sort()
+print("a_i:", a_i)
+print("b_i:", b_i)
