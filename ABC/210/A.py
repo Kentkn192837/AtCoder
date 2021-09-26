@@ -1,14 +1,10 @@
-a, b, c = map(int, input().split())
-x = 1
+def calc(n, a, x, y):
+    if n > a:
+        discounted = n - a
+        return a * x + discounted * y
+    else:
+        return n * x
 
-while True:
-    mul = x * c
-    if mul < a:
-        x += 1
-        continue
-    if mul > b:
-        print(-1)
-        break
-    if a <= mul and mul <= b:
-        print(mul)
-        break
+n, a, x, y = map(int, input().split())
+result = calc(n, a, x, y)
+print(result)
