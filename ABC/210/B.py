@@ -1,6 +1,9 @@
-k = int(input())
-a, b = map(str, input().split())
+def judge(n, s):
+    for i, val in enumerate(list(s)):
+        if int(val) == 1:
+            return 'Takahashi' if i % 2 == 0 else 'Aoki'
 
-a = int(a, k)
-b = int(b, k)
-print(a * b)
+n = int(input())
+s = input()
+result = judge(n, s)
+print(result)
