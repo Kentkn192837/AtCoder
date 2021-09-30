@@ -1,15 +1,18 @@
-from math import ceil
+from math import floor
  
 def calc(n, a, x):
     len_a = len(a)
     sum_a = sum(a)
-    t = ceil(x / sum_a)
+    t = floor(x / sum_a)
     mul = sum_a * t
+    times = len_a * t
+    if mul > x:
+        return times
     i = 0
     while True:
-        if (mul - a[-(i + 1)]) < x:
-            return t * len_a - i
-        mul -= a[-(i + 1)]
+        mul += a[i % len_a]
+        if mul > x:
+            return times + i + 1
         i += 1
  
 def main():
