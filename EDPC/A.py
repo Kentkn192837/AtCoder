@@ -1,3 +1,7 @@
+"""
+問題URL:https://atcoder.jp/contests/dp/tasks/dp_a
+"""
+
 def DP_search(h):
     nodes = [0]
     nodes.append(abs(h[1] - h[0]))
