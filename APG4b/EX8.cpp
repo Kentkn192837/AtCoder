@@ -1,17 +1,17 @@
-#include <bits/stdc++.h>
+ï»¿#include <bits/stdc++.h>
 using namespace std;
 
 int main() {
     int p, price, N;
     cin >> p;
 
-    // ƒpƒ^[ƒ“1
+    // ãƒ‘ã‚¿ãƒ¼ãƒ³1
     if (p == 1) {
         cin >> price >> N;
         cout << price * N << endl;
     }
 
-    // ƒpƒ^[ƒ“2
+    // ãƒ‘ã‚¿ãƒ¼ãƒ³2
     if (p == 2) {
         string text;
         cin >> text >> price >> N;
