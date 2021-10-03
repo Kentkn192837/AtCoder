@@ -1,23 +1,17 @@
-from math import ceil
- 
-def calc(n, a, x):
-    len_a = len(a)
-    sum_a = sum(a)
-    t = ceil(x / sum_a)
-    mul = sum_a * t
-    i = 0
-    while True:
-        if (mul - a[-(i + 1)]) < x:
-            return t * len_a - i
-        mul -= a[-(i + 1)]
-        i += 1
- 
-def main():
-    n = int(input())
-    a = [int(x) for x in input().split()]
-    x = int(input())
-    result = calc(n, a, x)
-    print(result)
- 
-if __name__ == '__main__':
-    main()
+"""
+尺取り法(差分計算)
+"""
+
+n, k = map(int, input().split())
+c = list(map(int, input().split()))
+max = 0
+for i in range(n - k + 1):
+    comp = []
+    for j in c[i:i + k]:
+        if j not in comp:
+            comp.append(j)
+    if max <= len(comp):
+        max = len(comp)
+    if max == k:
+        break
+print(max)
