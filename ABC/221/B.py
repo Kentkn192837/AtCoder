@@ -1,13 +1,15 @@
-"""
-不正解 AC×11 WA×4
-"""
+s = input()
+t = input()
 
-s = list(input())
-t = list(input())
-incorrect_count = 0
- 
-for i, j in zip(s, t):
-    if i != j:
-        incorrect_count += 1
- 
-print("No") if incorrect_count >= 3 else print("Yes")
+if s == t:
+    print("Yes")
+    exit()
+else:
+    for i in range(len(s) - 1):
+        u = list(s)
+        u[i], u[i+1] = u[i+1], u[i]
+        u = ''.join(u)
+        if u == t:
+            print("Yes")
+            exit()
+print("No")
