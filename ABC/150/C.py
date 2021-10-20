@@ -6,17 +6,8 @@ import itertools
 def search(p, q):
     p_permutations = sorted(list(map(list, itertools.permutations(p))))
     q_permutations = sorted(list(map(list, itertools.permutations(q))))
-    a = 0
-    b = 0
-    for i, val in enumerate(p_permutations):
-        if val == p:
-            a = i
-            break
-
-    for j, val in enumerate(q_permutations):
-        if val == q:
-            b = j
-            break
+    a = p_permutations.index(p)
+    b = q_permutations.index(q)
     return abs(a - b)
 
 def main():
