@@ -1,10 +1,14 @@
 def main():
     n, k = map(int, input().split())
-    h = list(map(int, input().split()))
-    while h and k > 0:
-        h.remove(max(h))
-        k -= 1
-    print(sum(h))
+    h = sorted(list(map(int, input().split())), reverse=True)
+    
+    ans = 0
+    for i in range(n):
+        if k > 0:
+            h[i] = 0
+            k -= 1
+        ans += h[i]
+    print(ans)
 
 if __name__ == '__main__':
     main()
