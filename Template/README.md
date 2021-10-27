@@ -1,5 +1,5 @@
 # 小数の丸め込みについて
-#### 参考ページ(https://note.nkmk.me/python-round-decimal-quantize/ )
+#### 参考ページ(<a href="https://note.nkmk.me/python-round-decimal-quantize/" target="_blank">https://note.nkmk.me/python-round-decimal-quantize/ </a>)
 ### round()について
 組み込み関数の`round`は一般的な四捨五入ではなく偶数への丸めなので注意。<br>
 
@@ -62,4 +62,83 @@ print(int(Decimal(i).quantize(Decimal('1E2'), rounding=ROUND_HALF_UP)))
 
 print(int(Decimal(i).quantize(Decimal('1E3'), rounding=ROUND_HALF_UP)))
 # 100000
+```
+
+# リスト中の各要素の要素数の数え上げについて
+#### 参考ページ
+(<a href="https://note.nkmk.me/python-collections-counter/" target="_blank">https://note.nkmk.me/python-collections-counter/ </a>)<br>
+(<a href="https://docs.python.org/ja/3/library/collections.html" target="_blank">https://docs.python.org/ja/3/library/collections.html </a>)
+
+```
+import collections
+
+l = ['a', 'a', 'a', 'a', 'b', 'c', 'c']
+
+c = collections.Counter(l)
+print(c)
+# Counter({'a': 4, 'c': 2, 'b': 1})
+
+print(type(c))
+# <class 'collections.Counter'>
+
+print(issubclass(type(c), dict))
+# True
+```
+
+キーとして要素を指定するとその個数を取得できる。要素として存在しない値を指定すると0を返す。
+```
+print(c['a'])
+# 4
+
+print(c['b'])
+# 1
+
+print(c['c'])
+# 2
+
+print(c['d'])
+# 0
+```
+
+`keys()`, `values()`, `items()`などの辞書型のメソッドも使える。
+```
+print(c.keys())
+# dict_keys(['a', 'b', 'c'])
+
+print(c.values())
+# dict_values([4, 1, 2])
+
+print(c.items())
+# dict_items([('a', 4), ('b', 1), ('c', 2)])
+```
+
+#### 出現回数順に要素を取得: most_common()メソッド
+出現回数が最も多いものは`[0]`、最も少ないものは`[-1]`のようにインデックスを指定して取得できる。要素だけ、出現回数だけを取得したい場合はさらにインデックスを指定すればOK
+```
+print(c.most_common())
+# [('a', 4), ('c', 2), ('b', 1)]
+
+print(c.most_common()[0])
+# ('a', 4)
+
+print(c.most_common()[-1])
+# ('b', 1)
+
+print(c.most_common()[0][0])
+# a
+
+print(c.most_common()[0][1])
+# 4
+```
+
+出現回数の少ない順に並べ替えたい場合は増分を`-1`としたスライスを使う。
+```
+print(c.most_common()[::-1])
+# [('b', 1), ('c', 2), ('a', 4)]
+```
+
+`most_common()`メソッドに引数`n`を指定すると、出現回数の多い`n`個の要素のみを返す。省略するとすべての要素。
+```
+print(c.most_common(2))
+# [('a', 4), ('c', 2)]
 ```
