@@ -30,3 +30,36 @@ print(Decimal(str(f)).quantize(Decimal('0.1'), rounding=ROUND_HALF_UP))
 print(Decimal(str(f)).quantize(Decimal('0.01'), rounding=ROUND_HALF_UP))
 # 123.46
 ```
+
+#### 整数を任意の桁数で四捨五入・偶数への丸め
+整数の桁に丸めたい場合、第一引数に'10'のように指定しても所望の結果は得られない。
+```
+i = 99518
+
+print(Decimal(i).quantize(Decimal('10'), rounding=ROUND_HALF_UP))
+# 99518
+```
+
+`E`を使った指数表記の文字列（例えば`'1E1'`）とすれば任意の指数を指定できる。指数`exponent`は`as_tuple`メソッドで確認できる。
+```
+print(Decimal('10').as_tuple())
+# DecimalTuple(sign=0, digits=(1, 0), exponent=0)
+
+print(Decimal('1E1').as_tuple())
+# DecimalTuple(sign=0, digits=(1,), exponent=1)
+```
+
+そのままだと結果も`E`を使った指数表記になるので、通常の表記にしたい、あるいは、丸めたあとで整数`int`型と演算したい、といった場合は、`int()`で変換する。
+```
+print(Decimal(i).quantize(Decimal('1E1'), rounding=ROUND_HALF_UP))
+# 9.952E+4
+
+print(int(Decimal(i).quantize(Decimal('1E1'), rounding=ROUND_HALF_UP)))
+# 99520
+
+print(int(Decimal(i).quantize(Decimal('1E2'), rounding=ROUND_HALF_UP)))
+# 99500
+
+print(int(Decimal(i).quantize(Decimal('1E3'), rounding=ROUND_HALF_UP)))
+# 100000
+```
