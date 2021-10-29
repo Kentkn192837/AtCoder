@@ -1,5 +1,7 @@
+def test(variable, x):
+    print('{}: {}'.format(variable, x))
+
 def main():
-    pass
 
 if __name__ == '__main__':
     main()
