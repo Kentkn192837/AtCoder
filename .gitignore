@@ -12,3 +12,5 @@
 .editorconfig
 
 test
+
+__pycache__
