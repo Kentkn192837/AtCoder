@@ -17,7 +17,7 @@ def quick_sort(arr):
     
     left = quick_sort(left)
     right = quick_sort(right)
-    return left + [arr] * ref_count + right
+    return left + [ref] * ref_count + right
 
 """
 ・基準値を決めて、その基準値から見て大小の2つの配列に分ける。
