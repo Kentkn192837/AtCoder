@@ -1,10 +1,9 @@
 def main():
     s, t, x = map(int, input().split())
-    times = t - s
-    if times > 0:
-        print('Yes' if x < t else 'No')
+    if s < t:
+        print("Yes" if s <= x < t else "No")
     else:
-        print('Yes' if x > s else 'No')
+        print("Yes" if x < t or s <= x else "No")
 
 if __name__ == '__main__':
     main()
