@@ -11,6 +11,9 @@
 .vs
 .editorconfig
 
+# VSCode
+.vscode
+
 test
 
 __pycache__
