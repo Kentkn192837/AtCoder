@@ -12,7 +12,7 @@ def main():
         else:
             tmp = s[:i] + t
             if i + len(t) < len(s):
-                tmp += s[i:len(t):]
+                tmp += s[i + len(t):]
             ans.append(tmp)
     
     if ans == []:
