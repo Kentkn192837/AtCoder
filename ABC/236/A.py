@@ -4,11 +4,7 @@ def main():
 
     a -= 1
     b -= 1
-    ch_a = S[a]
-    ch_b = S[b]
-
-    S[a] = ch_b
-    S[b] = ch_a
+    S[a], S[b] = S[b], S[a]
     print(''.join(S))
 
 if __name__ == '__main__':
