@@ -4,12 +4,9 @@ def main():
 
     max_cand = 0
     
-    for i in range(1, len(S) - 1):
-        left = list(S[:i])
-        right = list(S[i:-1])
-        matched_list = list(set(left) & set(right))
-        max_cand = max(max_cand, len(matched_list))
-    
+    for i in range(1, N):
+        matched_list = set(S[:i]) & set(S[i:])
+        max_cand = len(matched_list) if max_cand < len(matched_list) else max_cand
     print(max_cand)
 
 if __name__ == '__main__':
