@@ -15,7 +15,6 @@ def main():
     a, b = input_two_array(N)       # 学生の座標
     c, d = input_two_array(M)       # チェックポイントの座標 
 
-    position = [0] * M
     for i in range(N):
         candidate = []
         for j in range(M):
