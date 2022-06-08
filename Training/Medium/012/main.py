@@ -4,11 +4,12 @@ def show(A):
 
 def main():
     H, W = map(int, input().split())
-    a = [input() for _ in range(H)]
-    print(a)
-
     row = []
-    col = []
+    # 行が全て白(.)なら削除
+    for _ in range(H):
+        line = input()
+        if line != '.' * W:
+            row.append(line)
     
     # 横のチェック
     a = [x for x in a if '#' in x]
