@@ -11,7 +11,7 @@ def calc(m):
     elif 6 <= m and m <= 30:
         return zfill(m + 50)
     elif 35 <= m and m <= 70:
-        return zfill((m - 30) / 5) + 80)
+        return zfill(((m - 30) / 5) + 80)
     elif 70 <= m:
         return 89
 
