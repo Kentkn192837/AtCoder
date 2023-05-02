@@ -17,6 +17,9 @@
 # test
 *.txt
 
+# Java class file
+*.class
+
 test
 
 __pycache__
