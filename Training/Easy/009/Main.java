@@ -11,10 +11,6 @@ class Distance {
     }
 
 
-    void showDistance() {
-        System.out.println(this.distance);
-    }
-
     Distance add(final Distance otherDistance) {
         final int amount = this.distance + otherDistance.distance;
         return new Distance(amount);
@@ -30,17 +26,16 @@ public class Main {
         for (int i = 0; i < N; i++) {
             x[i] = sc.nextInt();
         }
-        System.out.println("N: " + N);
-        System.out.println("K: " + K);
 
+        Distance result = new Distance(0);
         for (int i = 0; i < N; i++) {
-            System.out.print(x[i] + " ");
+            Distance a = new Distance(2 * x[i]);
+            Distance b = new Distance(2 * (K - x[i]));
+            final int minimumDistance = Math.min(a.distance, b.distance);
+            Distance addedDistance = new Distance(minimumDistance);
+            result = result.add(addedDistance);
         }
-        System.out.println();
 
-        Distance a = new Distance(8);
-        Distance b = new Distance(5);
-        Distance newdist = a.add(b);
-        newdist.showDistance();
+        System.out.println(result.distance);
     }
 }
