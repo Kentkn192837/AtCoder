@@ -13,8 +13,8 @@ def count_bill(n, y):
 def judge(ans):
     if ans:
         print(*ans[0], sep=' ')
-    else:
-        print(-1, -1, -1)
+        return
+    print(-1, -1, -1)
 
 if __name__ == '__main__':
     n, y = map(int, input().split())
