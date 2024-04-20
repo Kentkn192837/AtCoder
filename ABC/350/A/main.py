@@ -5,7 +5,7 @@ def main():
         print("No")
         return
 
-    if end == 316 or 0:
+    if end == 316:
         print("No")
         return
 
