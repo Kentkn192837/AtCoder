@@ -13,6 +13,7 @@
 
 # test
 *.txt
+!dockerfiles/**/*.txt
 
 # Java class file
 *.class
