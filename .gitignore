@@ -11,9 +11,6 @@
 .vs
 .editorconfig
 
-# VSCode
-.vscode
-
 # test
 *.txt
 
