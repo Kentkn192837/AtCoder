@@ -4,7 +4,7 @@ FROM python:3.10-alpine
 WORKDIR /app
 
 # Copy the requirements.txt file to the container
-COPY requirements.txt .
+COPY ./dockerfiles/python/requirements.txt .
 
 # Install the Python dependencies
 RUN pip install --upgrade pip
