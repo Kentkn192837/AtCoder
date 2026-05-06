@@ -1,0 +1,6 @@
+from typing import List
+class Solution:
+    def XXXXXXXXXXXXXXX(self, nums: List[int]) -> bool:
+
+
+print(Solution().XXXXXXXXXXXXXXX(list(map(int, input().split()))))
