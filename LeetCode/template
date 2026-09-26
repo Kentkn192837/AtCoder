@@ -3,4 +3,4 @@ class Solution:
     def XXXXXXXXXXXXXXX(self, nums: List[int]) -> bool:
 
 
-print(Solution().XXXXXXXXXXXXXXX(list(map(int, input().split()))))
+print(Solution().XXXXXXXXXXXXXXX(list(map(int, input().split(",")))))
